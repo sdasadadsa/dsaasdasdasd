@@ -28,7 +28,7 @@ exports.handler = async (event) => {
   }
 
   try {
-    const fileData = await githubGet(`/repos/${REPO}/contents/fixed.json`);
+    const fileData = await githubGet(`/repos/${REPO}/contents/public/fixed.json`);
     if (fileData.message) {
       return { statusCode: 500, headers: cors, body: JSON.stringify({ error: fileData.message }) };
     }
