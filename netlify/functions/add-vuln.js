@@ -1,7 +1,7 @@
 const https = require('https');
 
 const REPO      = 'sdasadadsa/dsaasdasdasd';
-const FILE_PATH = 'public/data.json';
+const FILE_PATH = 'data.json';
 const TOKEN     = process.env.GITHUB_TOKEN;
 
 exports.handler = async (event) => {
