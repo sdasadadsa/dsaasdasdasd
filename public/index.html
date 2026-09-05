@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Knifex</title>
+  <link rel="stylesheet" href="style.css?v=1" />
+</head>
+<body>
+
+  <div id="login-screen" class="login-screen">
+    <div class="login-card">
+      <div class="logo">Knifex</div>
+      <input id="nick-input" type="text" placeholder="User" maxlength="32" />
+      <button id="nick-btn" class="btn-primary">Продолжить</button>
+    </div>
+  </div>
+
+  <div id="main-screen" class="main-screen hidden">
+
+    <header class="header">
+      <div class="header-left">
+        <span class="logo-small">Knifex</span>
+      </div>
+      <div class="header-right">
+        <button id="add-btn" class="btn-primary">+ Добавить</button>
+      </div>
+    </header>
+
+    <div class="filters">
+      <div class="status-tabs">
+        <button class="status-tab active" data-status="all">Все</button>
+        <button class="status-tab" data-status="open">Открытые</button>
+        <button class="status-tab" data-status="fixed">Исправленные</button>
+      </div>
+    </div>
+
+    <div class="stats">
+      <span class="stat-item"><span id="count-all">0</span> всего</span>
+      <span class="stat-sep">·</span>
+      <span class="stat-item open-color"><span id="count-open">0</span> открытых</span>
+      <span class="stat-sep">·</span>
+      <span class="stat-item fixed-color"><span id="count-fixed">0</span> исправлено</span>
+    </div>
+
+    <div id="vuln-list" class="vuln-list">
+      <div class="loading">Загрузка...</div>
+    </div>
+
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2>Добавить уязвимость</h2>
+        <button id="modal-close" class="modal-close">&#10005;</button>
+      </div>
+
+      <input id="form-site" type="hidden" value="Knifex" />
+
+      <label>Название</label>
+      <input id="form-title" type="text" placeholder="Название" />
+
+      <label>Описание</label>
+      <textarea id="form-desc" placeholder="Подробнее об уязвимости..."></textarea>
+
+      <label>Критичность</label>
+      <div class="severity-picker">
+        <button class="sev-btn active" data-sev="critical">Critical</button>
+        <button class="sev-btn" data-sev="high">High</button>
+        <button class="sev-btn" data-sev="medium">Medium</button>
+        <button class="sev-btn" data-sev="low">Low</button>
+      </div>
+
+      <button id="form-submit" class="btn-primary full">Добавить</button>
+    </div>
+  </div>
+
+  <script src="app.js?v=1"></script>
+</body>
+</html>
